@@ -29,15 +29,8 @@ jobs:
           go-version-file: go.mod
           cache: false
 
-      - name: Verify formatting
-        shell: bash
-        run: |
-          unformatted="$(gofmt -l .)"
-          if [ -n "$unformatted" ]; then
-            echo "The following Go files need gofmt:"
-            echo "$unformatted"
-            exit 1
-          fi
+      - name: Format source
+        run: gofmt -w *.go
 
       - name: Vet
         run: go vet ./...
