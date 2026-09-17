@@ -1,0 +1,23 @@
+# Runtime data (never commit real job-search data)
+data/
+*.sqlite
+*.sqlite3
+*.db
+*.secret
+jobtracker.json
+jobtracker.json.*
+
+# Build output
+job-tracker
+dist/
+coverage.out
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
