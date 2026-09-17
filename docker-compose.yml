@@ -1,0 +1,14 @@
+services:
+  job-tracker:
+    image: ghcr.io/zaijianyimian/jobs:latest
+    build: .
+    container_name: job-tracker
+    restart: unless-stopped
+    ports:
+      - "16666:8000"
+    environment:
+      JOB_TRACKER_DATA: /data/jobtracker.json
+      JOB_TRACKER_ADDR: :8000
+      JOB_TRACKER_TZ: Asia/Shanghai
+    volumes:
+      - ./data:/data
